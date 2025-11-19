@@ -8,4 +8,5 @@ interface TaskRepository {
     suspend fun insertTask(task: Task)
     suspend fun updateTask(task: Task)
     suspend fun deleteTask(task: Task)
+    fun getTasksForDateRange(startTime: Long, endTime: Long): Flow<List<Task>>
 }

@@ -18,4 +18,8 @@ class TaskRepositoryImpl(private val taskDao: TaskDao) : TaskRepository {
     override suspend fun deleteTask(task: Task) {
         taskDao.deleteTask(task)
     }
+
+    override fun getTasksForDateRange(startTime: Long, endTime: Long): Flow<List<Task>> {
+        return taskDao.getTasksForDateRange(startTime, endTime)
+    }
 }

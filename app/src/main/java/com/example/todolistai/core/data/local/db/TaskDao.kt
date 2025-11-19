@@ -17,4 +17,7 @@ interface TaskDao {
 
     @Delete
     suspend fun deleteTask(task: Task)
+
+    @Query("SELECT * FROM tasks WHERE dueDate BETWEEN :startTime AND :endTime")
+    fun getTasksForDateRange(startTime: Long, endTime: Long): Flow<List<Task>>
 }

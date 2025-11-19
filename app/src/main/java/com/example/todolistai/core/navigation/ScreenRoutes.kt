@@ -1,6 +1,7 @@
 package com.example.todolistai.core.navigation
 
 sealed class ScreenRoutes(val route: String) {
-    object TaskList : ScreenRoutes("task_list")
+    object Home : ScreenRoutes("home")
+    object Focus : ScreenRoutes("focus")
     object Analytics : ScreenRoutes("analytics")
 }
